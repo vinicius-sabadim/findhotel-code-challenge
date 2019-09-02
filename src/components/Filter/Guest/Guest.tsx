@@ -18,22 +18,22 @@ const Guest: React.FC<GuestProps> = ({ selected, onChange }) => {
           toggleValue={() => onChange(0)}
         />
         <Action
-          isActive={selected >= 6}
+          isActive={selected <= 6}
           value="6+"
           toggleValue={() => onChange(6)}
         />
         <Action
-          isActive={selected >= 7}
+          isActive={selected <= 7}
           value="7+"
           toggleValue={() => onChange(7)}
         />
         <Action
-          isActive={selected >= 8}
+          isActive={selected <= 8}
           value="8+"
           toggleValue={() => onChange(8)}
         />
         <Action
-          isActive={selected >= 9}
+          isActive={selected <= 9}
           value="9+"
           toggleValue={() => onChange(9)}
         />
