@@ -15,7 +15,7 @@ const Filter: React.FC<FilterProps> = ({ isOpen, hideFilters }) => {
   const [guest, setGuest] = React.useState<number>(0)
   const [stars, setStars] = React.useState<Set<number>>(new Set())
 
-  const restore = () => {
+  const reset = () => {
     setGuest(0)
     setStars(new Set())
   }
@@ -38,7 +38,7 @@ const Filter: React.FC<FilterProps> = ({ isOpen, hideFilters }) => {
             xmlns="http://www.w3.org/2000/svg"
             style={{ margin: '0 16px' }}
             onClick={() => {
-              restore()
+              reset()
               hideFilters()
             }}
           >
@@ -49,8 +49,8 @@ const Filter: React.FC<FilterProps> = ({ isOpen, hideFilters }) => {
         <Guest selected={guest} onChange={setGuest} />
         <Stars selected={stars} onChange={setStars} />
         <div className="filter__buttons">
-          <button className="filter__button" onClick={restore}>
-            Restore
+          <button className="filter__button" onClick={reset}>
+            Reset
           </button>
           <button
             className="filter__button filter__button--main"
