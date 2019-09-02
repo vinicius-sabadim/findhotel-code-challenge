@@ -1,0 +1,9 @@
+.main__container {
+  background-color: #f4f4f4;
+  min-height: calc(100vh - 56px);
+  padding: 8px;
+}
+
+.main__buttonArea {
+  margin: 16px 0;
+}

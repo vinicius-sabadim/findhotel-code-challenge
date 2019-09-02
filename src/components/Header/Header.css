@@ -1,0 +1,11 @@
+.header__container {
+  align-items: center;
+  background-color: #2d8beb;
+  box-shadow: rgba(39, 39, 39, 0.24) 0px 2px 2px 0px,
+    rgba(39, 39, 39, 0.12) 0px 0px 2px 0px;
+  color: white;
+  display: flex;
+  font-weight: bold;
+  height: 56px;
+  position: relative;
+}

@@ -1,0 +1,11 @@
+.button__container {
+  align-items: center;
+  background-color: white;
+  border: 1px solid rgb(216, 216, 216);
+  color: #2d8beb;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  outline: none;
+  padding: 6px 22px;
+}
