@@ -7,7 +7,7 @@ import Main from '../Main'
 import './App.css'
 
 const App: React.FC = () => {
-  const [isFilterOpened, setIsFilterOpened] = React.useState<boolean>(false)
+  const [isFilterOpened, setIsFilterOpened] = React.useState<boolean>(true)
 
   return (
     <div>

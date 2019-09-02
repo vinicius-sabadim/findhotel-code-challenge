@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from '../Header'
+import Stars from './Stars'
 
 import './Filter.css'
 
@@ -10,6 +11,8 @@ interface FilterProps {
 }
 
 const Filter: React.FC<FilterProps> = ({ isOpen, hideFilters }) => {
+  const [stars, setStars] = React.useState<Set<number>>(new Set())
+
   return (
     <>
       <div
@@ -33,6 +36,7 @@ const Filter: React.FC<FilterProps> = ({ isOpen, hideFilters }) => {
           </svg>
           Filter by
         </Header>
+        <Stars selected={stars} onChange={setStars} />
       </div>
     </>
   )

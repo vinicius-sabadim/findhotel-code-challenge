@@ -1,0 +1,33 @@
+.stars__container {
+  margin: 16px;
+}
+
+.stars__container p {
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stars__actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.star__button {
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #c4c4c4;
+  color: #c4c4c4;
+  display: flex;
+  font-weight: 500;
+  height: 36px;
+  justify-content: center;
+  width: 17%;
+}
+
+.star__button--active {
+  background-color: #f7ca18;
+  border: none;
+  color: white;
+}
