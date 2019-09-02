@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "photo": "https://i.fih.io/VNKYeeocVVUg9AJq3oGv-0srnIY=/592x340/https://i.travelapi.com/hotels/7000000/6330000/6326000/6325959/7394802e_w.jpg",
+    "title": "Quentin Amsterdam Hotel",
+    "starRating": 2,
+    "guestRating": 7.8,
+    "isBookmarked": false,
+    "location": "120 m to city centre",
+    "tags": [
+      "Amazing SPA",
+      "Good food",
+      "Family friendly",
+      "Great location",
+      "Perfect WiFi"
+    ],
+    "deals": [
+      {
+        "partner": "Booking.com",
+        "url": "booking.com",
+        "value": 115,
+        "discount": 104,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "Priceline.com",
+        "url": "priceline.com",
+        "value": 115,
+        "discount": null,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "Expedia.nl",
+        "url": "expedia.nl",
+        "value": 132,
+        "discount": null,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "7ideas.com",
+        "url": "7ideas.com",
+        "value": 129,
+        "discount": null,
+        "hasFreeCancellation": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "photo": "https://i.fih.io/VNKYeeocVVUg9AJq3oGv-0srnIY=/592x340/https://i.travelapi.com/hotels/7000000/6330000/6326000/6325959/7394802e_w.jpg",
+    "title": "Hotel Torenzicht",
+    "starRating": 3,
+    "guestRating": 9.2,
+    "isBookmarked": false,
+    "location": "120 m to city centre",
+    "tags": [
+      "Central location",
+      "24 hour reception",
+      "Great restaurant",
+      "Canal view",
+      "Very clean"
+    ],
+    "deals": [
+      {
+        "partner": "Expedia.nl",
+        "url": "expedia.nl",
+        "value": 254,
+        "discount": 223,
+        "hasFreeCancellation": false
+      },
+      {
+        "partner": "Booking.com",
+        "url": "booking.com",
+        "value": 240,
+        "discount": null,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "Priceline.com",
+        "url": "priceline.com",
+        "value": 256,
+        "discount": null,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "7ideas.com",
+        "url": "7ideas.com",
+        "value": 227,
+        "discount": null,
+        "hasFreeCancellation": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "photo": "https://i.fih.io/VNKYeeocVVUg9AJq3oGv-0srnIY=/592x340/https://i.travelapi.com/hotels/7000000/6330000/6326000/6325959/7394802e_w.jpg",
+    "title": "Quentin Amsterdam Hotel",
+    "starRating": 2,
+    "guestRating": 8.9,
+    "isBookmarked": true,
+    "location": "120 m to city centre",
+    "tags": [
+      "Amazing SPA",
+      "Good food",
+      "Family friendly",
+      "Great location",
+      "Perfect WiFi"
+    ],
+    "deals": [
+      {
+        "partner": "7ideas.com",
+        "url": "7ideas.com",
+        "value": 531,
+        "discount": 495,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "Booking.com",
+        "url": "booking.com",
+        "value": 514,
+        "discount": null,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "Priceline.com",
+        "url": "priceline.com",
+        "value": 520,
+        "discount": null,
+        "hasFreeCancellation": true
+      },
+      {
+        "partner": "Expedia.nl",
+        "url": "expedia.nl",
+        "value": 518,
+        "discount": null,
+        "hasFreeCancellation": true
+      }
+    ]
+  }
+]

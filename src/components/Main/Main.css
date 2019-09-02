@@ -4,6 +4,12 @@
   padding: 8px;
 }
 
+.main__loading {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .main__buttonArea {
   margin: 16px 0;
 }

@@ -1,12 +1,27 @@
 import React from 'react'
 
+import Loading from '../Loading'
+
+import { Hotel as HotelType } from '../../types'
+
 import './Main.css'
 
 interface MainProps {
+  hotels: HotelType[]
+  isLoading: boolean
   showFilters: () => void
 }
 
-const Main: React.FC<MainProps> = ({ showFilters }) => {
+const Main: React.FC<MainProps> = ({ hotels, isLoading, showFilters }) => {
+  if (isLoading)
+    return (
+      <div className="main__container main__loading">
+        <Loading />
+      </div>
+    )
+
+  console.log(hotels)
+
   return (
     <div className="main__container">
       <div className="main__buttonArea">

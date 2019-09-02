@@ -1,13 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Filter from '../Filter'
 import Header from '../Header'
 import Main from '../Main'
 
+import { getHotels } from '../../api'
+
+import { Hotel as HotelType } from '../../types'
+
 import './App.css'
 
+interface AppState {
+  isFilterOpened: boolean
+  isLoading: boolean
+  hotels: HotelType[]
+}
+
 const App: React.FC = () => {
-  const [isFilterOpened, setIsFilterOpened] = React.useState<boolean>(true)
+  const [state, setState] = useState<AppState>({
+    isFilterOpened: false,
+    isLoading: true,
+    hotels: []
+  })
+
+  const fetchHotels = async () => {
+    try {
+      const hotels = await getHotels()
+      setState(prevState => ({
+        ...prevState,
+        isLoading: false,
+        hotels
+      }))
+    } catch {
+      setState(prevState => ({
+        ...prevState,
+        isLoading: false
+      }))
+    }
+  }
+
+  React.useEffect(() => {
+    fetchHotels()
+  }, [])
+
+  const setIsFilterOpened = (value: boolean) => {
+    setState(prevState => ({
+      ...prevState,
+      isFilterOpened: value
+    }))
+  }
+
+  const { isFilterOpened, isLoading, hotels } = state
 
   return (
     <div>
@@ -18,7 +61,11 @@ const App: React.FC = () => {
           alt="FindHotel logo"
         />
       </Header>
-      <Main showFilters={() => setIsFilterOpened(true)} />
+      <Main
+        hotels={hotels}
+        isLoading={isLoading}
+        showFilters={() => setIsFilterOpened(true)}
+      />
       <Filter
         isOpen={isFilterOpened}
         hideFilters={() => setIsFilterOpened(false)}
