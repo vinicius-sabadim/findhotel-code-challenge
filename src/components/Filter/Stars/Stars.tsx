@@ -21,34 +21,34 @@ const Stars: React.FC<StarsProps> = ({ selected, onChange }) => {
   }
 
   return (
-    <div className="stars__container">
+    <div className="filter__listContainer">
       <p>Star Rating </p>
-      <div className="stars__actions">
+      <div className="filter__listActions">
         <Star
           isActive={selected.size === 0}
           value="Any"
           toggleValue={() => handleClick(0)}
-        ></Star>
+        />
         <Star
           isActive={selected.has(2)}
           value="2"
           toggleValue={() => handleClick(2)}
-        ></Star>
+        />
         <Star
           isActive={selected.has(3)}
           value="3"
           toggleValue={() => handleClick(3)}
-        ></Star>
+        />
         <Star
           isActive={selected.has(4)}
           value="4"
           toggleValue={() => handleClick(4)}
-        ></Star>
+        />
         <Star
           isActive={selected.has(5)}
           value="5"
           toggleValue={() => handleClick(5)}
-        ></Star>
+        />
       </div>
     </div>
   )

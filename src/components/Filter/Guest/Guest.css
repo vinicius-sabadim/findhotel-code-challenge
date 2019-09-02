@@ -1,4 +1,4 @@
-.star__button {
+.guest__button {
   align-items: center;
   background-color: transparent;
   border: 1px solid #c4c4c4;
@@ -11,8 +11,8 @@
   width: 17%;
 }
 
-.star__button--active {
-  background-color: #f7ca18;
+.guest__button--active {
+  background-color: #2d8beb;
   border: none;
   color: white;
 }
