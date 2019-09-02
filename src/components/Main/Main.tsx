@@ -1,5 +1,6 @@
 import React from 'react'
 
+import HotelList from '../HotelList'
 import Loading from '../Loading'
 
 import { Hotel as HotelType } from '../../types'
@@ -20,8 +21,6 @@ const Main: React.FC<MainProps> = ({ hotels, isLoading, showFilters }) => {
       </div>
     )
 
-  console.log(hotels)
-
   return (
     <div className="main__container">
       <div className="main__buttonArea">
@@ -40,6 +39,8 @@ const Main: React.FC<MainProps> = ({ hotels, isLoading, showFilters }) => {
           </svg>
           Filter by
         </button>
+
+        <HotelList hotels={hotels} />
       </div>
     </div>
   )
