@@ -11,7 +11,8 @@
 }
 
 .main__buttonArea {
-  margin: 16px 0;
+  display: flex;
+  margin: 8px 0 16px;
 }
 
 .main__button {
@@ -22,5 +23,6 @@
   display: flex;
   font-weight: bold;
   justify-content: center;
+  margin-right: 8px;
   padding: 6px 22px;
 }

@@ -9,9 +9,10 @@ import './Main.css'
 
 interface MainProps {
   showFilters: () => void
+  showSort: () => void
 }
 
-const Main: React.FC<MainProps> = ({ showFilters }) => {
+const Main: React.FC<MainProps> = ({ showFilters, showSort }) => {
   const { isLoading } = useHotelsState()
 
   if (isLoading)
@@ -39,9 +40,23 @@ const Main: React.FC<MainProps> = ({ showFilters }) => {
           </svg>
           Filter by
         </button>
-
-        <HotelList />
+        <button className="main__button" onClick={showSort}>
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            viewBox="0 0 24 24"
+            height="1em"
+            width="1em"
+            style={{ marginRight: '5px' }}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"></path>
+          </svg>
+          Sort by
+        </button>
       </div>
+      <HotelList />
     </div>
   )
 }

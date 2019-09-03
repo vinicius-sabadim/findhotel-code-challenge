@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Filter from '../Filter'
 import Header from '../Header'
 import Main from '../Main'
+import Sort from '../Sort'
 
 import { HotelsProvider } from '../../hotels-context'
 
@@ -10,6 +11,7 @@ import './App.css'
 
 const App: React.FC = () => {
   const [isFilterOpened, setIsFilterOpened] = useState<boolean>(false)
+  const [isSortOpened, setIsSortOpened] = useState<boolean>(false)
 
   return (
     <HotelsProvider>
@@ -20,11 +22,15 @@ const App: React.FC = () => {
           alt="FindHotel logo"
         />
       </Header>
-      <Main showFilters={() => setIsFilterOpened(true)} />
+      <Main
+        showFilters={() => setIsFilterOpened(true)}
+        showSort={() => setIsSortOpened(true)}
+      />
       <Filter
         isOpen={isFilterOpened}
         hideFilters={() => setIsFilterOpened(false)}
       />
+      <Sort isOpen={isSortOpened} hideSort={() => setIsSortOpened(false)} />
     </HotelsProvider>
   )
 }

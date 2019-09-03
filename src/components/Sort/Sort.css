@@ -1,0 +1,39 @@
+.sort__container {
+  background-color: white;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.sort__opened {
+  transform: translate3d(0, 0, 0);
+}
+
+.sort__closed {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.sort__actions {
+  margin: 32px;
+}
+
+.sort__label {
+  align-items: center;
+  border: 1px solid #d8d8d8;
+  display: flex;
+  margin-bottom: 8px;
+  padding: 16px;
+  width: 100%;
+}
+
+.sort__label--active {
+  border: 1px solid #2d8beb;
+  color: #2d8beb;
+}
+
+.sort__actions input {
+  margin-right: 8px;
+}
