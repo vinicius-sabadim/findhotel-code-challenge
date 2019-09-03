@@ -7,7 +7,7 @@ import { Hotel as HotelType } from './types'
 type State = {
   isLoading: boolean
   hotels: HotelType[]
-  changeBookmark: (id: number, value: boolean) => Promise<void>
+  changeBookmark: (id: string, value: boolean) => Promise<void>
 }
 type HotelsProviderProps = { children: React.ReactNode }
 
@@ -40,7 +40,7 @@ function HotelsProvider({ children }: HotelsProviderProps) {
     fetchHotels()
   }, [])
 
-  async function changeBookmark(id: number, value: boolean): Promise<void> {
+  async function changeBookmark(id: string, value: boolean): Promise<void> {
     try {
       const hotels = await api.changeBookmark(id, value)
       setState(prevState => ({

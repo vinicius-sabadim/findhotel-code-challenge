@@ -7,13 +7,14 @@ export type Deal = {
 }
 
 export type Hotel = {
-  id: number
+  id: string
   photo: string
   title: string
   starRating: number
-  guestRating: number
+  guestRating: string
   isBookmarked: boolean
-  location: string
+  location: number
   tags: string[]
   deals: Deal[]
+  hasGreatDeal: boolean
 }

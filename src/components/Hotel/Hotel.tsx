@@ -62,9 +62,12 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
         <div className="hotel__guestRating">
           <i
             className="far fa-smile"
-            style={{ color: getGuestRatingColor(hotel.guestRating) }}
+            style={{
+              color: getGuestRatingColor(parseFloat(hotel.guestRating))
+            }}
           ></i>
-          {getGuestRatingText(hotel.guestRating)} {hotel.guestRating}
+          {getGuestRatingText(parseFloat(hotel.guestRating))}{' '}
+          {hotel.guestRating}
         </div>
         <div className="hotel__tags">{tagMapper(hotel.tags)}</div>
       </div>
