@@ -2,6 +2,8 @@ import React from 'react'
 
 import Header from '../Header'
 
+import { useHotelsState } from '../../hotels-context'
+
 import './Sort.css'
 
 interface SortProps {
@@ -10,10 +12,11 @@ interface SortProps {
 }
 
 const Sort: React.FC<SortProps> = ({ isOpen, hideSort }) => {
-  const [sort, setSort] = React.useState<string>('best')
+  const { sortBy, updateSortBy } = useHotelsState()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSort(e.target.value)
+    updateSortBy(e.target.value)
+    hideSort()
   }
 
   return (
@@ -44,14 +47,14 @@ const Sort: React.FC<SortProps> = ({ isOpen, hideSort }) => {
             htmlFor="best-match"
             className={`
               sort__label
-              ${sort === 'best' ? 'sort__label--active' : ''}`}
+              ${sortBy === 'best' ? 'sort__label--active' : ''}`}
           >
             <input
               type="radio"
               name="sort"
               value="best"
               id="best-match"
-              checked={sort === 'best'}
+              checked={sortBy === 'best'}
               onChange={handleChange}
             />
             Best match
@@ -60,14 +63,14 @@ const Sort: React.FC<SortProps> = ({ isOpen, hideSort }) => {
             htmlFor="lowest-price"
             className={`
               sort__label
-              ${sort === 'lowest' ? 'sort__label--active' : ''}`}
+              ${sortBy === 'lowest' ? 'sort__label--active' : ''}`}
           >
             <input
               type="radio"
               name="sort"
               value="lowest"
               id="lowest-price"
-              checked={sort === 'lowest'}
+              checked={sortBy === 'lowest'}
               onChange={handleChange}
             />
             Lowest price

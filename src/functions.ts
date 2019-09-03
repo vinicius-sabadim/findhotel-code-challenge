@@ -6,11 +6,11 @@ function buildTag() {
   return faker.random.words(2)
 }
 
-function buildDeal() {
-  const value = faker.random.number({ min: 20, max: 999 })
+function buildDeal(bestDealValue: number = 20) {
+  const value = faker.random.number({ min: bestDealValue, max: 999 })
   const discount = faker.random.boolean()
-    ? faker.random.number({ min: 1, max: value - 1 })
-    : null
+    ? faker.random.number({ min: 10, max: 99 })
+    : 0
 
   return {
     partner: faker.internet.domainName(),
@@ -22,6 +22,8 @@ function buildDeal() {
 }
 
 export function buildHotel(overrides: {} = {}): Hotel {
+  const bestDeal = buildDeal()
+
   return {
     id: faker.random.uuid(),
     photo:
@@ -32,7 +34,12 @@ export function buildHotel(overrides: {} = {}): Hotel {
     isBookmarked: faker.random.boolean(),
     location: faker.random.number({ min: 20, max: 50000 }),
     tags: [buildTag(), buildTag(), buildTag(), buildTag(), buildTag()],
-    deals: [buildDeal(), buildDeal(), buildDeal(), buildDeal()],
+    deals: [
+      bestDeal,
+      buildDeal(bestDeal.value - bestDeal.discount),
+      buildDeal(bestDeal.value - bestDeal.discount),
+      buildDeal(bestDeal.value - bestDeal.discount)
+    ],
     hasGreatDeal: faker.random.boolean(),
     ...overrides
   }

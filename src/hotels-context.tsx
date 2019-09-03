@@ -7,7 +7,9 @@ import { Hotel as HotelType } from './types'
 type State = {
   isLoading: boolean
   hotels: HotelType[]
+  sortBy: string
   changeBookmark: (id: string, value: boolean) => Promise<void>
+  updateSortBy: (value: string) => void
 }
 type HotelsProviderProps = { children: React.ReactNode }
 
@@ -17,7 +19,9 @@ function HotelsProvider({ children }: HotelsProviderProps) {
   const [state, setState] = React.useState<State>({
     isLoading: true,
     hotels: [],
-    changeBookmark
+    sortBy: 'best',
+    changeBookmark,
+    updateSortBy
   })
 
   const fetchHotels = async () => {
@@ -48,6 +52,13 @@ function HotelsProvider({ children }: HotelsProviderProps) {
         hotels
       }))
     } catch {}
+  }
+
+  function updateSortBy(value: string) {
+    setState(prevState => ({
+      ...prevState,
+      sortBy: value
+    }))
   }
 
   return (
