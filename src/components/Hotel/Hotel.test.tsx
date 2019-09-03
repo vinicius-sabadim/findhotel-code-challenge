@@ -3,10 +3,9 @@ import { render, fireEvent, wait } from '@testing-library/react'
 
 import { AppProvider } from '../../app-context'
 import { buildHotel } from '../../functions'
+import { changeBookmark } from '../../api'
 
 import Hotel from './Hotel'
-
-import { changeBookmark } from '../../api'
 
 const mockChangeBookmark = changeBookmark as jest.Mock<any>
 
