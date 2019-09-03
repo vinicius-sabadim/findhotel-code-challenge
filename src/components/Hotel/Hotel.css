@@ -14,10 +14,19 @@
   position: absolute;
   right: 8px;
   top: 8px;
-  transition: color 0.5s;
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .hotel__bookmark--active {
+  animation: heart 1s;
   color: red;
 }
 
