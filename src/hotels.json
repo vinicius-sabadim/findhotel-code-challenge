@@ -19,28 +19,28 @@
         "partner": "Booking.com",
         "url": "booking.com",
         "value": 115,
-        "valueWithDiscount": 104,
+        "discount": 11,
         "hasFreeCancellation": true
       },
       {
         "partner": "Priceline.com",
         "url": "priceline.com",
-        "value": 115,
-        "valueWithDiscount": null,
+        "value": 116,
+        "discount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Expedia.nl",
         "url": "expedia.nl",
         "value": 132,
-        "valueWithDiscount": null,
+        "discount": 18,
         "hasFreeCancellation": true
       },
       {
         "partner": "7ideas.com",
         "url": "7ideas.com",
         "value": 129,
-        "valueWithDiscount": null,
+        "discount": null,
         "hasFreeCancellation": true
       }
     ]
@@ -65,28 +65,28 @@
         "partner": "Expedia.nl",
         "url": "expedia.nl",
         "value": 254,
-        "valueWithDiscount": 223,
+        "discount": 31,
         "hasFreeCancellation": false
       },
       {
         "partner": "Booking.com",
         "url": "booking.com",
         "value": 240,
-        "valueWithDiscount": null,
+        "discount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Priceline.com",
         "url": "priceline.com",
         "value": 256,
-        "valueWithDiscount": null,
+        "discount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "7ideas.com",
         "url": "7ideas.com",
         "value": 227,
-        "valueWithDiscount": null,
+        "discount": null,
         "hasFreeCancellation": true
       }
     ]
@@ -111,28 +111,28 @@
         "partner": "7ideas.com",
         "url": "7ideas.com",
         "value": 531,
-        "valueWithDiscount": 495,
+        "discount": 36,
         "hasFreeCancellation": true
       },
       {
         "partner": "Booking.com",
         "url": "booking.com",
         "value": 514,
-        "valueWithDiscount": null,
+        "discount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Priceline.com",
         "url": "priceline.com",
         "value": 520,
-        "valueWithDiscount": null,
+        "discount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Expedia.nl",
         "url": "expedia.nl",
         "value": 518,
-        "valueWithDiscount": null,
+        "discount": null,
         "hasFreeCancellation": true
       }
     ]

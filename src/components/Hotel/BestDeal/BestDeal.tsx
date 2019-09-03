@@ -11,11 +11,11 @@ interface BestDealProps {
 const BestDeal: React.FC<BestDealProps> = ({ deal }) => {
   return (
     <div className="bestDeal__container">
-      {deal.valueWithDiscount ? (
+      {deal.discount ? (
         <>
           <span className="bestDeal__value">€{deal.value}</span>
           <span className="bestDeal__finalValue">
-            €<strong>{deal.valueWithDiscount}</strong>
+            €<strong>{deal.value - deal.discount}</strong>
           </span>
         </>
       ) : (

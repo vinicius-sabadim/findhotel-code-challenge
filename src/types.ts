@@ -2,7 +2,7 @@ export type Deal = {
   partner: string
   url: string
   value: number
-  valueWithDiscount: number | null
+  discount: number | null
   hasFreeCancellation: boolean
 }
 

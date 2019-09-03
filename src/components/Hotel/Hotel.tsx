@@ -78,11 +78,21 @@ interface DealProps {
 const Deal: React.FC<DealProps> = ({ deal }) => {
   return (
     <div className="hotel__deal">
+      {deal.partner}
+      <div className="hotel__dealValueContainer">
+        {deal.discount ? (
+          <>
+            <span className="hotel__dealValue">€{deal.value}</span>
+            <span className="hotel__dealFinalValue">
+              €{deal.value - deal.discount}
+            </span>
+          </>
+        ) : (
+          <span className="hotel__dealFinalValue">€{deal.value}</span>
+        )}
+      </div>
       <a href={deal.url}>
-        {deal.partner}
-        <span>
-          €{deal.valueWithDiscount ? deal.valueWithDiscount : deal.value}
-        </span>
+        View Deal<span>˃</span>
       </a>
     </div>
   )

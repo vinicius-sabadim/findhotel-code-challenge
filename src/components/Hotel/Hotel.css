@@ -3,7 +3,7 @@
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px,
     rgba(0, 0, 0, 0.12) 0px 0px 2px 0px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .hotel__container img {
@@ -69,13 +69,48 @@
 
 .hotel__dealsContainer {
   border-top: 1px solid rgb(216, 216, 216);
-  padding: 16px;
+}
+
+.hotel__deal {
+  align-items: center;
+  border-top: 1px solid rgb(216, 216, 216);
+  color: #555;
+  display: flex;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.hotel__dealValueContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.hotel__dealValue {
+  color: red;
+  text-decoration: line-through;
+}
+
+.hotel__dealFinalValue {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .hotel__deal a {
-  color: #555;
+  align-items: center;
+  background-color: #2d8beb;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  padding: 4px 0;
+  padding: 8px;
+}
+
+.hotel__deal a span {
+  display: block;
+  margin-left: 8px;
 }
