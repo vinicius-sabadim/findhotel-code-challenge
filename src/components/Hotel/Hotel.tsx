@@ -47,15 +47,19 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
 
   return (
     <li className="hotel__container">
-      <i
-        data-testid="bookmark"
-        className={`fa-heart hotel__bookmark ${
-          hotel.isBookmarked ? 'fas hotel__bookmark--active' : 'far'
-        }`}
-        onClick={handleBookmark}
-      ></i>
-      {hotel.hasGreatDeal && <span className="hotel__offer">Great offer</span>}
-      <img src={hotel.photo} alt="Detail of room" />
+      <div className="hotel__photo">
+        <i
+          data-testid="bookmark"
+          className={`fa-heart hotel__bookmark ${
+            hotel.isBookmarked ? 'fas hotel__bookmark--active' : 'far'
+          }`}
+          onClick={handleBookmark}
+        ></i>
+        {hotel.hasGreatDeal && (
+          <span className="hotel__offer">Great offer</span>
+        )}
+        <img src={hotel.photo} alt="Detail of room" />
+      </div>
       <div className="hotel__info">
         <h1>{hotel.title}</h1>
         <div className="hotel__stars">

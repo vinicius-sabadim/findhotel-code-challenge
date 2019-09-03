@@ -1,7 +1,6 @@
 .main__container {
-  background-color: #f4f4f4;
   min-height: calc(100vh - 56px);
-  padding: 8px;
+  padding: 8px 16px;
 }
 
 .main__loading {

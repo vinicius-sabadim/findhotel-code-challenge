@@ -1,6 +1,30 @@
 .app__logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.app__logo img {
   height: 24px;
   margin: 0 auto;
   padding-top: 3px;
   width: 140px;
+}
+
+@media screen and (min-width: 1023px) {
+  .app__logo {
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 1020px;
+  }
+
+  .app__logo img {
+    margin: 0 0 0 16px;
+  }
+
+  .app__container {
+    margin: 0 auto;
+    width: 1020px;
+  }
 }
