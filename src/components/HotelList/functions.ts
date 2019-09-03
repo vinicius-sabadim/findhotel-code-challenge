@@ -9,8 +9,8 @@ export function sortHotels(hotels: Hotel[], sortBy: string): Hotel[] {
   }
   return hotels.sort((prevHotel, hotel) => {
     const prevHotelValue =
-      prevHotel.deals[0].value - prevHotel.deals[0].discount
-    const hotelValue = hotel.deals[0].value - hotel.deals[0].discount
+      prevHotel.deals[0].price - prevHotel.deals[0].discount
+    const hotelValue = hotel.deals[0].price - hotel.deals[0].discount
     if (hotelValue < prevHotelValue) return 1
     return -1
   })

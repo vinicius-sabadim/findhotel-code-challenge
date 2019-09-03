@@ -101,16 +101,16 @@ const Deal: React.FC<DealProps> = ({ deal }) => {
   return (
     <div className="hotel__deal">
       {deal.partner}
-      <div className="hotel__dealValueContainer">
+      <div className="hotel__dealPriceContainer">
         {deal.discount ? (
           <>
-            <span className="hotel__dealValue">€{deal.value}</span>
-            <span className="hotel__dealFinalValue">
-              €{deal.value - deal.discount}
+            <span className="hotel__dealPrice">€{deal.price}</span>
+            <span className="hotel__dealFinalPrice">
+              €{deal.price - deal.discount}
             </span>
           </>
         ) : (
-          <span className="hotel__dealFinalValue">€{deal.value}</span>
+          <span className="hotel__dealFinalPrice">€{deal.price}</span>
         )}
       </div>
       <a href={deal.url}>

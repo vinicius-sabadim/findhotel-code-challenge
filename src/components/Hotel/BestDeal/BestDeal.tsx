@@ -13,13 +13,13 @@ const BestDeal: React.FC<BestDealProps> = ({ deal }) => {
     <div className="bestDeal__container">
       {deal.discount ? (
         <>
-          <span className="bestDeal__value">€{deal.value}</span>
-          <span className="bestDeal__finalValue">
-            €<strong>{deal.value - deal.discount}</strong>
+          <span className="bestDeal__price">€{deal.price}</span>
+          <span className="bestDeal__finalPrice">
+            €<strong>{deal.price - deal.discount}</strong>
           </span>
         </>
       ) : (
-        <span className="bestDeal__finalValue">€{deal.value}</span>
+        <span className="bestDeal__finalPrice">€{deal.price}</span>
       )}
       {deal.hasFreeCancellation && (
         <span className="bestDeal__freeCancellation">Free cancellation</span>

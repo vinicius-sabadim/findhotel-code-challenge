@@ -140,7 +140,7 @@
   padding: 8px 16px;
 }
 
-.hotel__dealValueContainer {
+.hotel__dealPriceContainer {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -149,12 +149,12 @@
   margin-right: 16px;
 }
 
-.hotel__dealValue {
+.hotel__dealPrice {
   color: red;
   text-decoration: line-through;
 }
 
-.hotel__dealFinalValue {
+.hotel__dealFinalPrice {
   font-size: 18px;
   font-weight: 700;
 }
