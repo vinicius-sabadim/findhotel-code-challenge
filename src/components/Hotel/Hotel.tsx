@@ -1,6 +1,10 @@
 import React from 'react'
 
-import { Hotel as HotelType } from '../../types'
+import BestDeal from './BestDeal'
+
+import { getGuestRatingColor, getGuestRatingText } from './functions'
+
+import { Deal as DealType, Hotel as HotelType } from '../../types'
 
 import './Hotel.css'
 
@@ -9,6 +13,8 @@ interface HotelProps {
 }
 
 const Hotel: React.FC<HotelProps> = ({ hotel }) => {
+  const bestDeal = hotel.deals[0]
+
   const starMapper = (stars: number[], value: number): JSX.Element[] => {
     return stars.map((_, index) => (
       <div
@@ -24,6 +30,10 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
     return tags.map(tag => <Tag key={tag} tag={tag} />)
   }
 
+  const dealsMapper = (deals: DealType[]): JSX.Element[] => {
+    return deals.map(deal => <Deal key={deal.partner} deal={deal} />)
+  }
+
   return (
     <li className="hotel__container">
       <img src={hotel.photo} alt="Detail of room" />
@@ -32,9 +42,22 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
         <div className="hotel__stars">
           {starMapper([...Array(5)], hotel.starRating)}
         </div>
-        {hotel.location}
-        {hotel.guestRating}
-        {tagMapper(hotel.tags)}
+        <div className="hotel__location">
+          <i className="fas fa-location-arrow"></i>
+          {hotel.location}
+        </div>
+        <div className="hotel__guestRating">
+          <i
+            className="far fa-smile"
+            style={{ color: getGuestRatingColor(hotel.guestRating) }}
+          ></i>
+          {getGuestRatingText(hotel.guestRating)} {hotel.guestRating}
+        </div>
+        <div className="hotel__tags">{tagMapper(hotel.tags)}</div>
+      </div>
+      <div className="hotel__dealsContainer">
+        <BestDeal deal={bestDeal} />
+        {dealsMapper(hotel.deals.slice(1))}
       </div>
     </li>
   )
@@ -45,7 +68,24 @@ interface TagProps {
 }
 
 const Tag: React.FC<TagProps> = ({ tag }) => {
-  return <div>{tag}</div>
+  return <div className="hotel__tag">{tag}</div>
+}
+
+interface DealProps {
+  deal: DealType
+}
+
+const Deal: React.FC<DealProps> = ({ deal }) => {
+  return (
+    <div className="hotel__deal">
+      <a href={deal.url}>
+        {deal.partner}
+        <span>
+          €{deal.valueWithDiscount ? deal.valueWithDiscount : deal.value}
+        </span>
+      </a>
+    </div>
+  )
 }
 
 export default Hotel

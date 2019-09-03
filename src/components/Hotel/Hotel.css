@@ -35,3 +35,47 @@
   color: #ff8300;
   font-size: 20px;
 }
+
+.hotel__location {
+  color: #2d8beb;
+  margin-bottom: 4px;
+}
+
+.hotel__location i {
+  margin-right: 8px;
+}
+
+.hotel__guestRating {
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.hotel__guestRating i {
+  margin-right: 8px;
+}
+
+.hotel__tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hotel__tag {
+  background-color: #eee;
+  border-radius: 16px;
+  font-size: 14px;
+  margin: 0 4px 4px 0;
+  padding: 8px 16px;
+}
+
+.hotel__dealsContainer {
+  border-top: 1px solid rgb(216, 216, 216);
+  padding: 16px;
+}
+
+.hotel__deal a {
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 4px 0;
+}

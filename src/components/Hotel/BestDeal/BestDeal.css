@@ -1,0 +1,44 @@
+.bestDeal__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.bestDeal__value {
+  color: red;
+  display: block;
+  text-decoration: line-through;
+}
+
+.bestDeal__finalValue {
+  display: block;
+  font-size: 30px;
+}
+
+.bestDeal__freeCancellation {
+  color: #00915e;
+  display: block;
+  font-size: 14px;
+}
+
+.bestDeal__action {
+  align-items: center;
+  background-color: #ff4b01;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  margin-top: 6px;
+  max-width: 200px;
+  padding: 4px 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.bestDeal__action i {
+  font-size: 24px;
+  position: relative;
+  top: -2px;
+}

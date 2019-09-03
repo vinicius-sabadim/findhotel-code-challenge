@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "photo": "https://i.fih.io/VNKYeeocVVUg9AJq3oGv-0srnIY=/592x340/https://i.travelapi.com/hotels/7000000/6330000/6326000/6325959/7394802e_w.jpg",
+    "photo": "https://image.shutterstock.com/image-illustration/3d-render-luxury-hotel-room-600w-1446590612.jpg",
     "title": "Quentin Amsterdam Hotel",
     "starRating": 2,
     "guestRating": 7.8,
@@ -19,35 +19,35 @@
         "partner": "Booking.com",
         "url": "booking.com",
         "value": 115,
-        "discount": 104,
+        "valueWithDiscount": 104,
         "hasFreeCancellation": true
       },
       {
         "partner": "Priceline.com",
         "url": "priceline.com",
         "value": 115,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Expedia.nl",
         "url": "expedia.nl",
         "value": 132,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "7ideas.com",
         "url": "7ideas.com",
         "value": 129,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       }
     ]
   },
   {
     "id": 2,
-    "photo": "https://i.fih.io/VNKYeeocVVUg9AJq3oGv-0srnIY=/592x340/https://i.travelapi.com/hotels/7000000/6330000/6326000/6325959/7394802e_w.jpg",
+    "photo": "https://image.shutterstock.com/image-illustration/3d-render-luxury-hotel-room-600w-1446590612.jpg",
     "title": "Hotel Torenzicht",
     "starRating": 3,
     "guestRating": 9.2,
@@ -65,35 +65,35 @@
         "partner": "Expedia.nl",
         "url": "expedia.nl",
         "value": 254,
-        "discount": 223,
+        "valueWithDiscount": 223,
         "hasFreeCancellation": false
       },
       {
         "partner": "Booking.com",
         "url": "booking.com",
         "value": 240,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Priceline.com",
         "url": "priceline.com",
         "value": 256,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "7ideas.com",
         "url": "7ideas.com",
         "value": 227,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       }
     ]
   },
   {
     "id": 3,
-    "photo": "https://i.fih.io/VNKYeeocVVUg9AJq3oGv-0srnIY=/592x340/https://i.travelapi.com/hotels/7000000/6330000/6326000/6325959/7394802e_w.jpg",
+    "photo": "https://image.shutterstock.com/image-illustration/3d-render-luxury-hotel-room-600w-1446590612.jpg",
     "title": "Doubletree by Hilton Hotel Amsterdam Centraal Station",
     "starRating": 2,
     "guestRating": 8.9,
@@ -111,28 +111,28 @@
         "partner": "7ideas.com",
         "url": "7ideas.com",
         "value": 531,
-        "discount": 495,
+        "valueWithDiscount": 495,
         "hasFreeCancellation": true
       },
       {
         "partner": "Booking.com",
         "url": "booking.com",
         "value": 514,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Priceline.com",
         "url": "priceline.com",
         "value": 520,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       },
       {
         "partner": "Expedia.nl",
         "url": "expedia.nl",
         "value": 518,
-        "discount": null,
+        "valueWithDiscount": null,
         "hasFreeCancellation": true
       }
     ]
