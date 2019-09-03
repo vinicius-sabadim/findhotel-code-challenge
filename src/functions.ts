@@ -8,9 +8,12 @@ function buildTag() {
 
 function buildDeal(bestDealValue: number = 20) {
   const value = faker.random.number({ min: bestDealValue, max: 999 })
-  const discount = faker.random.boolean()
-    ? faker.random.number({ min: 10, max: 99 })
-    : 0
+  const discount =
+    value < 100
+      ? 0
+      : faker.random.boolean()
+      ? faker.random.number({ min: 10, max: 99 })
+      : 0
 
   return {
     partner: faker.internet.domainName(),

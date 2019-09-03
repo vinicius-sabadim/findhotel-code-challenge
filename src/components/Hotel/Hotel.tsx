@@ -48,6 +48,7 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
   return (
     <li className="hotel__container">
       <i
+        data-testid="bookmark"
         className={`fa-heart hotel__bookmark ${
           hotel.isBookmarked ? 'fas hotel__bookmark--active' : 'far'
         }`}

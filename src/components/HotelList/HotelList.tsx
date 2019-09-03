@@ -36,7 +36,11 @@ const HotelList: React.FC = () => {
       </div>
     )
 
-  return <ul className="hotelList__container">{hotelMapper(filteredHotels)}</ul>
+  return (
+    <ul data-testid="hotel-list" className="hotelList__container">
+      {hotelMapper(filteredHotels)}
+    </ul>
+  )
 }
 
 export default HotelList
