@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/findhotel-code-challenge/static/css/main.80e8b590.chunk.css",
+    "main.js": "/findhotel-code-challenge/static/js/main.3ee732cc.chunk.js",
+    "main.js.map": "/findhotel-code-challenge/static/js/main.3ee732cc.chunk.js.map",
+    "runtime~main.js": "/findhotel-code-challenge/static/js/runtime~main.87aa3b7e.js",
+    "runtime~main.js.map": "/findhotel-code-challenge/static/js/runtime~main.87aa3b7e.js.map",
+    "static/js/2.7b6ec7b1.chunk.js": "/findhotel-code-challenge/static/js/2.7b6ec7b1.chunk.js",
+    "static/js/2.7b6ec7b1.chunk.js.map": "/findhotel-code-challenge/static/js/2.7b6ec7b1.chunk.js.map",
+    "index.html": "/findhotel-code-challenge/index.html",
+    "precache-manifest.1755b8ed045d9ebc2a0fe0cb0d3d19ab.js": "/findhotel-code-challenge/precache-manifest.1755b8ed045d9ebc2a0fe0cb0d3d19ab.js",
+    "service-worker.js": "/findhotel-code-challenge/service-worker.js",
+    "static/css/main.80e8b590.chunk.css.map": "/findhotel-code-challenge/static/css/main.80e8b590.chunk.css.map"
+  }
+}
