@@ -34,8 +34,18 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
     return deals.map(deal => <Deal key={deal.partner} deal={deal} />)
   }
 
+  const handleBookmark = () => {
+    // changeBookmark(hotel.id, !hotel.isBookmarked)
+  }
+
   return (
     <li className="hotel__container">
+      <i
+        className={`fa-heart hotel__bookmark ${
+          hotel.isBookmarked ? 'fas hotel__bookmark--active' : 'far'
+        }`}
+        onClick={handleBookmark}
+      ></i>
       <img src={hotel.photo} alt="Detail of room" />
       <div className="hotel__info">
         <h1>{hotel.title}</h1>

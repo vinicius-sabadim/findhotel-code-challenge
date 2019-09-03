@@ -3,17 +3,17 @@ import React from 'react'
 import HotelList from '../HotelList'
 import Loading from '../Loading'
 
-import { Hotel as HotelType } from '../../types'
+import { useHotelsState } from '../../hotels-context'
 
 import './Main.css'
 
 interface MainProps {
-  hotels: HotelType[]
-  isLoading: boolean
   showFilters: () => void
 }
 
-const Main: React.FC<MainProps> = ({ hotels, isLoading, showFilters }) => {
+const Main: React.FC<MainProps> = ({ showFilters }) => {
+  const { isLoading } = useHotelsState()
+
   if (isLoading)
     return (
       <div className="main__container main__loading">
@@ -40,7 +40,7 @@ const Main: React.FC<MainProps> = ({ hotels, isLoading, showFilters }) => {
           Filter by
         </button>
 
-        <HotelList hotels={hotels} />
+        <HotelList />
       </div>
     </div>
   )

@@ -7,4 +7,6 @@ const getHotels = (): Promise<Hotel[]> => {
   return new Promise(resolve => setTimeout(() => resolve(hotels), 1000))
 }
 
-export { getHotels }
+const changeBookmark = (id: number, value: boolean): void => {}
+
+export { getHotels, changeBookmark }
