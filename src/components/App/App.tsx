@@ -5,7 +5,7 @@ import Header from '../Header'
 import Main from '../Main'
 import Sort from '../Sort'
 
-import { HotelsProvider } from '../../hotels-context'
+import { AppProvider } from '../../app-context'
 
 import './App.css'
 
@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [isSortOpened, setIsSortOpened] = useState<boolean>(false)
 
   return (
-    <HotelsProvider>
+    <AppProvider>
       <Header>
         <img
           className="app__logo"
@@ -31,7 +31,7 @@ const App: React.FC = () => {
         hideFilters={() => setIsFilterOpened(false)}
       />
       <Sort isOpen={isSortOpened} hideSort={() => setIsSortOpened(false)} />
-    </HotelsProvider>
+    </AppProvider>
   )
 }
 

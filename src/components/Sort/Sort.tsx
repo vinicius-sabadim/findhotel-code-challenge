@@ -2,7 +2,7 @@ import React from 'react'
 
 import Header from '../Header'
 
-import { useHotelsState } from '../../hotels-context'
+import { useAppState } from '../../app-context'
 
 import './Sort.css'
 
@@ -12,7 +12,7 @@ interface SortProps {
 }
 
 const Sort: React.FC<SortProps> = ({ isOpen, hideSort }) => {
-  const { sortBy, updateSortBy } = useHotelsState()
+  const { sortBy, updateSortBy } = useAppState()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     updateSortBy(e.target.value)

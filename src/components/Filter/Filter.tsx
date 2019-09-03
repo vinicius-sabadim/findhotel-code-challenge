@@ -4,6 +4,8 @@ import Header from '../Header'
 import Guest from './Guest'
 import Stars from './Stars'
 
+import { useAppState } from '../../app-context'
+
 import './Filter.css'
 
 interface FilterProps {
@@ -12,12 +14,11 @@ interface FilterProps {
 }
 
 const Filter: React.FC<FilterProps> = ({ isOpen, hideFilters }) => {
-  const [guest, setGuest] = React.useState<number>(0)
-  const [stars, setStars] = React.useState<Set<number>>(new Set())
+  const { updateFilterByGuestRating, updateFilterByStarRating } = useAppState()
 
   const reset = () => {
-    setGuest(0)
-    setStars(new Set())
+    updateFilterByGuestRating(0)
+    updateFilterByStarRating(new Set())
   }
 
   return (
@@ -46,8 +47,8 @@ const Filter: React.FC<FilterProps> = ({ isOpen, hideFilters }) => {
           </svg>
           Filter by
         </Header>
-        <Guest selected={guest} onChange={setGuest} />
-        <Stars selected={stars} onChange={setStars} />
+        <Guest />
+        <Stars />
         <div className="filter__buttons">
           <button className="filter__button" onClick={reset}>
             Reset

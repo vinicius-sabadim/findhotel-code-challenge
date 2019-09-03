@@ -2,7 +2,7 @@ import React from 'react'
 
 import BestDeal from './BestDeal'
 
-import { useHotelsState } from '../../hotels-context'
+import { useAppState } from '../../app-context'
 import {
   getGuestRatingColor,
   getGuestRatingText,
@@ -18,7 +18,7 @@ interface HotelProps {
 }
 
 const Hotel: React.FC<HotelProps> = ({ hotel }) => {
-  const { changeBookmark } = useHotelsState()
+  const { changeBookmark } = useAppState()
 
   const bestDeal = hotel.deals[0]
 

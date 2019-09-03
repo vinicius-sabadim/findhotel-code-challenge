@@ -1,41 +1,40 @@
 import React from 'react'
 
+import { useAppState } from '../../../app-context'
+
 import './Guest.css'
 
-interface GuestProps {
-  selected: number
-  onChange: (value: number) => void
-}
+const Guest: React.FC = () => {
+  const { filterByGuestRating, updateFilterByGuestRating } = useAppState()
 
-const Guest: React.FC<GuestProps> = ({ selected, onChange }) => {
   return (
     <div className="filter__listContainer">
       <p>Guest Rating </p>
       <div className="filter__listActions">
         <Action
-          isActive={selected === 0}
+          isActive={filterByGuestRating === 0}
           value="Any"
-          toggleValue={() => onChange(0)}
+          toggleValue={() => updateFilterByGuestRating(0)}
         />
         <Action
-          isActive={selected <= 6}
+          isActive={filterByGuestRating <= 6}
           value="6+"
-          toggleValue={() => onChange(6)}
+          toggleValue={() => updateFilterByGuestRating(6)}
         />
         <Action
-          isActive={selected <= 7}
+          isActive={filterByGuestRating <= 7}
           value="7+"
-          toggleValue={() => onChange(7)}
+          toggleValue={() => updateFilterByGuestRating(7)}
         />
         <Action
-          isActive={selected <= 8}
+          isActive={filterByGuestRating <= 8}
           value="8+"
-          toggleValue={() => onChange(8)}
+          toggleValue={() => updateFilterByGuestRating(8)}
         />
         <Action
-          isActive={selected <= 9}
+          isActive={filterByGuestRating <= 9}
           value="9+"
-          toggleValue={() => onChange(9)}
+          toggleValue={() => updateFilterByGuestRating(9)}
         />
       </div>
     </div>

@@ -7,20 +7,28 @@ import { Hotel as HotelType } from './types'
 type State = {
   isLoading: boolean
   hotels: HotelType[]
+  filterByGuestRating: number
+  filterByStarRating: Set<number>
   sortBy: string
   changeBookmark: (id: string, value: boolean) => Promise<void>
+  updateFilterByGuestRating: (value: number) => void
+  updateFilterByStarRating: (value: Set<number>) => void
   updateSortBy: (value: string) => void
 }
-type HotelsProviderProps = { children: React.ReactNode }
+type AppProviderProps = { children: React.ReactNode }
 
-const HotelsStateContext = React.createContext<State | undefined>(undefined)
+const AppStateContext = React.createContext<State | undefined>(undefined)
 
-function HotelsProvider({ children }: HotelsProviderProps) {
+function AppProvider({ children }: AppProviderProps) {
   const [state, setState] = React.useState<State>({
     isLoading: true,
     hotels: [],
+    filterByGuestRating: 0,
+    filterByStarRating: new Set(),
     sortBy: 'best',
     changeBookmark,
+    updateFilterByGuestRating,
+    updateFilterByStarRating,
     updateSortBy
   })
 
@@ -54,6 +62,20 @@ function HotelsProvider({ children }: HotelsProviderProps) {
     } catch {}
   }
 
+  function updateFilterByGuestRating(value: number) {
+    setState(prevState => ({
+      ...prevState,
+      filterByGuestRating: value
+    }))
+  }
+
+  function updateFilterByStarRating(value: Set<number>) {
+    setState(prevState => ({
+      ...prevState,
+      filterByStarRating: value
+    }))
+  }
+
   function updateSortBy(value: string) {
     setState(prevState => ({
       ...prevState,
@@ -62,18 +84,18 @@ function HotelsProvider({ children }: HotelsProviderProps) {
   }
 
   return (
-    <HotelsStateContext.Provider value={state}>
+    <AppStateContext.Provider value={state}>
       {children}
-    </HotelsStateContext.Provider>
+    </AppStateContext.Provider>
   )
 }
 
-function useHotelsState() {
-  const context = React.useContext(HotelsStateContext)
+function useAppState() {
+  const context = React.useContext(AppStateContext)
   if (context === undefined) {
-    throw new Error('useHotelsState must be used within a HotelsProvider')
+    throw new Error('useAppState must be used within a AppProvider')
   }
   return context
 }
 
-export { HotelsProvider, useHotelsState }
+export { AppProvider, useAppState }

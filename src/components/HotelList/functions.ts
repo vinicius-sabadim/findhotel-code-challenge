@@ -15,3 +15,19 @@ export function sortHotels(hotels: Hotel[], sortBy: string): Hotel[] {
     return -1
   })
 }
+
+export function filterHotels(
+  hotels: Hotel[],
+  guestRating: number,
+  starRating: Set<number>
+): Hotel[] {
+  const filteredByGuestRating = hotels.filter(
+    hotel => parseFloat(hotel.guestRating) >= guestRating
+  )
+  const filteredByStarRating = filteredByGuestRating.filter(hotel => {
+    if (starRating.size === 0) return true
+    return starRating.has(hotel.starRating)
+  })
+
+  return filteredByStarRating
+}

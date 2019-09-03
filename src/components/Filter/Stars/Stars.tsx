@@ -1,23 +1,22 @@
 import React from 'react'
 
+import { useAppState } from '../../../app-context'
+
 import './Stars.css'
 
-interface StarsProps {
-  selected: Set<number>
-  onChange: (value: Set<number>) => void
-}
+const Stars: React.FC = () => {
+  const { filterByStarRating, updateFilterByStarRating } = useAppState()
 
-const Stars: React.FC<StarsProps> = ({ selected, onChange }) => {
   const handleClick = (value: number): void => {
-    if (value === 0) return onChange(new Set())
+    if (value === 0) return updateFilterByStarRating(new Set())
 
-    const newStars = selected
-    if (selected.has(value)) {
+    const newStars = filterByStarRating
+    if (filterByStarRating.has(value)) {
       newStars.delete(value)
     } else {
       newStars.add(value)
     }
-    onChange(new Set(newStars))
+    updateFilterByStarRating(new Set(newStars))
   }
 
   return (
@@ -25,27 +24,27 @@ const Stars: React.FC<StarsProps> = ({ selected, onChange }) => {
       <p>Star Rating </p>
       <div className="filter__listActions">
         <Star
-          isActive={selected.size === 0}
+          isActive={filterByStarRating.size === 0}
           value="Any"
           toggleValue={() => handleClick(0)}
         />
         <Star
-          isActive={selected.has(2)}
+          isActive={filterByStarRating.has(2)}
           value="2"
           toggleValue={() => handleClick(2)}
         />
         <Star
-          isActive={selected.has(3)}
+          isActive={filterByStarRating.has(3)}
           value="3"
           toggleValue={() => handleClick(3)}
         />
         <Star
-          isActive={selected.has(4)}
+          isActive={filterByStarRating.has(4)}
           value="4"
           toggleValue={() => handleClick(4)}
         />
         <Star
-          isActive={selected.has(5)}
+          isActive={filterByStarRating.has(5)}
           value="5"
           toggleValue={() => handleClick(5)}
         />

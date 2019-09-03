@@ -3,7 +3,7 @@ import React from 'react'
 import HotelList from '../HotelList'
 import Loading from '../Loading'
 
-import { useHotelsState } from '../../hotels-context'
+import { useAppState } from '../../app-context'
 
 import './Main.css'
 
@@ -13,7 +13,7 @@ interface MainProps {
 }
 
 const Main: React.FC<MainProps> = ({ showFilters, showSort }) => {
-  const { isLoading } = useHotelsState()
+  const { isLoading } = useAppState()
 
   if (isLoading)
     return (
