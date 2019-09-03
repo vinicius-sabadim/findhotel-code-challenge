@@ -7,6 +7,14 @@ const getHotels = (): Promise<Hotel[]> => {
   return new Promise(resolve => setTimeout(() => resolve(hotels), 1000))
 }
 
-const changeBookmark = (id: number, value: boolean): void => {}
+const changeBookmark = (id: number, value: boolean): Promise<Hotel[]> => {
+  return new Promise(resolve => {
+    const updatedHotels = hotels.map(hotel => {
+      if (hotel.id === id) return { ...hotel, isBookmarked: value }
+      return hotel
+    })
+    resolve(updatedHotels)
+  })
+}
 
 export { getHotels, changeBookmark }

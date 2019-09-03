@@ -2,6 +2,7 @@ import React from 'react'
 
 import BestDeal from './BestDeal'
 
+import { useHotelsState } from '../../hotels-context'
 import { getGuestRatingColor, getGuestRatingText } from './functions'
 
 import { Deal as DealType, Hotel as HotelType } from '../../types'
@@ -13,6 +14,8 @@ interface HotelProps {
 }
 
 const Hotel: React.FC<HotelProps> = ({ hotel }) => {
+  const { changeBookmark } = useHotelsState()
+
   const bestDeal = hotel.deals[0]
 
   const starMapper = (stars: number[], value: number): JSX.Element[] => {
@@ -35,7 +38,7 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
   }
 
   const handleBookmark = () => {
-    // changeBookmark(hotel.id, !hotel.isBookmarked)
+    changeBookmark(hotel.id, !hotel.isBookmarked)
   }
 
   return (
