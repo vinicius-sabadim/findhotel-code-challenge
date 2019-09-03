@@ -11,3 +11,8 @@ export const getGuestRatingColor = (value: number): string => {
   if (value > 7) return '#f7ca18'
   return '#ff8300'
 }
+
+export const formatLocation = (value: number): string => {
+  if (value < 1000) return `${value} m to city centre`
+  return `${Math.floor(value / 1000)} km to city centre`
+}

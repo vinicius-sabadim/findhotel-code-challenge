@@ -3,7 +3,11 @@ import React from 'react'
 import BestDeal from './BestDeal'
 
 import { useHotelsState } from '../../hotels-context'
-import { getGuestRatingColor, getGuestRatingText } from './functions'
+import {
+  getGuestRatingColor,
+  getGuestRatingText,
+  formatLocation
+} from './functions'
 
 import { Deal as DealType, Hotel as HotelType } from '../../types'
 
@@ -57,7 +61,7 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
         </div>
         <div className="hotel__location">
           <i className="fas fa-location-arrow"></i>
-          {hotel.location}
+          {formatLocation(hotel.location)}
         </div>
         <div className="hotel__guestRating">
           <i
