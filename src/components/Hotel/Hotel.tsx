@@ -53,6 +53,7 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
         }`}
         onClick={handleBookmark}
       ></i>
+      {hotel.hasGreatDeal && <span className="hotel__offer">Great offer</span>}
       <img src={hotel.photo} alt="Detail of room" />
       <div className="hotel__info">
         <h1>{hotel.title}</h1>

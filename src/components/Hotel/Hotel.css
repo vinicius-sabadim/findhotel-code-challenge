@@ -30,6 +30,42 @@
   color: red;
 }
 
+.hotel__offer {
+  background-color: #ff4b01;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  left: -8px;
+  padding: 4px 8px 4px 16px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 8px;
+}
+
+.hotel__offer::before {
+  bottom: -8px;
+  content: '';
+  border-color: #ff4901 transparent transparent transparent;
+  border-style: solid;
+  border-width: 8px 0 0 8px;
+  height: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+
+.hotel__offer::after {
+  content: '';
+  border-color: transparent transparent transparent #ff4901;
+  border-style: solid;
+  border-width: 12px 0 12px 16px;
+  height: 0;
+  right: -16px;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
 .hotel__container img {
   height: auto;
   width: 100%;
