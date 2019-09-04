@@ -12,7 +12,6 @@ interface DistributionProps {
 const Distribution: React.FC<DistributionProps> = ({ criteria }) => {
   const { hotels } = useAppState()
   const distribution = getDistribution(hotels, criteria)
-  console.log(distribution)
 
   return (
     <div className="distribution__container">

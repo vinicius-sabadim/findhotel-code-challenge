@@ -1,0 +1,83 @@
+.desktop__container {
+  display: none;
+}
+
+@media screen and (min-width: 1023px) {
+  .desktop__container {
+    display: block;
+  }
+}
+
+.desktop__sliderArea {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.desktop__slider {
+  position: relative;
+  width: 30%;
+}
+
+.desktop__slider p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.desktop__slider p i {
+  margin-right: 4px;
+}
+
+.desktop__slider span {
+  color: #555;
+  font-size: 14px;
+}
+
+.desktop__slider .rangeslider-horizontal {
+  background-color: #d8d8d8;
+  box-shadow: none;
+  height: 3px;
+}
+
+.desktop__slider .rangeslider__handle {
+  border: 3px solid #2d8beb;
+  box-shadow: none;
+  height: 15px;
+  width: 15px;
+}
+
+.desktop__slider .rangeslider__handle:focus {
+  outline: none;
+}
+
+.desktop__slider .rangeslider__handle::after {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.desktop__slider .rangeslider__fill {
+  background-color: #2d8beb;
+  box-shadow: none;
+}
+
+.desktop__sortArea {
+  align-items: center;
+  color: #555;
+  display: flex;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.desktop__sortArea select {
+  background-color: white;
+  border-radius: 4px;
+  border: none;
+  margin: 0 8px;
+  padding: 8px 16px 8px 8px;
+}
+
+.desktop__hotelInfoDeals {
+  color: #2d8beb;
+  text-decoration: underline;
+}
