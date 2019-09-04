@@ -18,16 +18,17 @@ export function sortHotels(hotels: Hotel[], sortBy: string): Hotel[] {
 
 export function filterHotels(
   hotels: Hotel[],
+  distance: number,
   guestRating: number,
+  maxPrice: number,
   starRating: Set<number>
 ): Hotel[] {
-  const filteredByGuestRating = hotels.filter(
-    hotel => parseFloat(hotel.guestRating) >= guestRating
-  )
-  const filteredByStarRating = filteredByGuestRating.filter(hotel => {
-    if (starRating.size === 0) return true
-    return starRating.has(hotel.starRating)
-  })
-
-  return filteredByStarRating
+  return hotels
+    .filter(hotel => hotel.location <= distance)
+    .filter(hotel => parseFloat(hotel.guestRating) >= guestRating)
+    .filter(hotel => hotel.deals[0].price - hotel.deals[0].discount <= maxPrice)
+    .filter(hotel => {
+      if (starRating.size === 0) return true
+      return starRating.has(hotel.starRating)
+    })
 }

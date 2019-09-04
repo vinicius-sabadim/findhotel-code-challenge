@@ -13,14 +13,18 @@ const HotelList: React.FC = () => {
   const {
     hotels,
     sortBy,
+    filterByDistance,
     filterByGuestRating,
+    filterByMaxPrice,
     filterByStarRating
   } = useAppState()
 
   const sortedHotels = sortHotels(hotels, sortBy)
   const filteredHotels = filterHotels(
     sortedHotels,
+    filterByDistance,
     filterByGuestRating,
+    filterByMaxPrice,
     filterByStarRating
   )
 

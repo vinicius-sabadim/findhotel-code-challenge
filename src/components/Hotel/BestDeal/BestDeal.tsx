@@ -15,7 +15,7 @@ const BestDeal: React.FC<BestDealProps> = ({ deal }) => {
         <>
           <span className="bestDeal__price">€{deal.price}</span>
           <span className="bestDeal__finalPrice">
-            €<strong>{deal.price - deal.discount}</strong>
+            €{deal.price - deal.discount}
           </span>
         </>
       ) : (

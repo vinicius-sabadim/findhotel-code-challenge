@@ -7,11 +7,15 @@ import { Hotel as HotelType } from './types'
 type State = {
   isLoading: boolean
   hotels: HotelType[]
+  filterByDistance: number
   filterByGuestRating: number
+  filterByMaxPrice: number
   filterByStarRating: Set<number>
   sortBy: string
   changeBookmark: (id: string, value: boolean) => Promise<void>
+  updateFilterByDistance: (value: number) => void
   updateFilterByGuestRating: (value: number) => void
+  updateFilterByMaxPrice: (value: number) => void
   updateFilterByStarRating: (value: Set<number>) => void
   updateSortBy: (value: string) => void
 }
@@ -23,11 +27,15 @@ function AppProvider({ children }: AppProviderProps) {
   const [state, setState] = React.useState<State>({
     isLoading: true,
     hotels: [],
+    filterByDistance: 50000,
     filterByGuestRating: 0,
+    filterByMaxPrice: 1000,
     filterByStarRating: new Set(),
     sortBy: 'best',
     changeBookmark,
+    updateFilterByDistance,
     updateFilterByGuestRating,
+    updateFilterByMaxPrice,
     updateFilterByStarRating,
     updateSortBy
   })
@@ -62,10 +70,24 @@ function AppProvider({ children }: AppProviderProps) {
     } catch {}
   }
 
+  function updateFilterByDistance(value: number) {
+    setState(prevState => ({
+      ...prevState,
+      filterByDistance: value
+    }))
+  }
+
   function updateFilterByGuestRating(value: number) {
     setState(prevState => ({
       ...prevState,
       filterByGuestRating: value
+    }))
+  }
+
+  function updateFilterByMaxPrice(value: number) {
+    setState(prevState => ({
+      ...prevState,
+      filterByMaxPrice: value
     }))
   }
 

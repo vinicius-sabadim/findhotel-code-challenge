@@ -67,7 +67,7 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
         </div>
         <div className="hotel__location">
           <i className="fas fa-location-arrow"></i>
-          {formatLocation(hotel.location)}
+          {formatLocation(hotel.location)} to city center
         </div>
         <div className="hotel__guestRating">
           <i

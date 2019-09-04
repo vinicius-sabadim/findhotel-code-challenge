@@ -14,6 +14,12 @@
   margin: 8px 0 16px;
 }
 
+@media screen and (min-width: 1023px) {
+  .main__buttonArea {
+    display: none;
+  }
+}
+
 .main__button {
   align-items: center;
   background-color: white;
@@ -24,4 +30,56 @@
   justify-content: center;
   margin-right: 8px;
   padding: 6px 22px;
+}
+
+.main__sliderArea {
+  display: none;
+}
+
+@media screen and (min-width: 1023px) {
+  .main__sliderArea {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+  }
+}
+
+.main__slider {
+  width: 30%;
+}
+
+.main__slider p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.main__slider p i {
+  margin-right: 4px;
+}
+
+.main__slider span {
+  color: #555;
+  font-size: 14px;
+}
+
+.main__slider .rangeslider-horizontal {
+  height: 5px;
+}
+
+.main__slider .rangeslider__handle {
+  border: 4px solid #2d8beb;
+  box-shadow: none;
+  height: 20px;
+  width: 20px;
+}
+
+.main__slider .rangeslider__handle::after {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.main__slider .rangeslider__fill {
+  background-color: #2d8beb;
+  box-shadow: none;
 }
