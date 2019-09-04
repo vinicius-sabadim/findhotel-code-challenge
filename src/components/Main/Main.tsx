@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from 'react-rangeslider'
 
+import Distribution from './Distribution'
 import HotelList from '../HotelList'
 import Loading from '../Loading'
 
@@ -109,6 +110,7 @@ const DesktopArea: React.FC = () => {
             <i className="fas fa-euro-sign"></i> Max price
           </p>
           <span>€{filterByMaxPrice}</span>
+          <Distribution criteria="price" />
           <Slider
             min={1}
             max={1000}
@@ -122,6 +124,7 @@ const DesktopArea: React.FC = () => {
             <i className="far fa-smile"></i> Min rating
           </p>
           <span>{filterByGuestRating}</span>
+          <Distribution criteria="guest" />
           <Slider
             min={0}
             max={10}
@@ -135,6 +138,7 @@ const DesktopArea: React.FC = () => {
             <i className="fas fa-location-arrow"></i> Distance from city center
           </p>
           <span>{formatLocation(filterByDistance)}</span>
+          <Distribution criteria="distance" />
           <Slider
             min={20}
             max={50000}

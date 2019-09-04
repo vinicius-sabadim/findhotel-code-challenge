@@ -78,7 +78,7 @@ export function buildHotel(overrides: {} = {}): Hotel {
       'https://image.shutterstock.com/image-illustration/3d-render-luxury-hotel-room-600w-1446590612.jpg',
     title: faker.company.companyName(),
     starRating: faker.random.number({ min: 1, max: 5 }),
-    guestRating: faker.finance.amount(6, 10, 1),
+    guestRating: faker.finance.amount(0.1, 10, 1),
     isBookmarked: faker.random.boolean(),
     location: faker.random.number({ min: 20, max: 50000 }),
     tags: [buildTag(), buildTag(), buildTag(), buildTag(), buildTag()],
