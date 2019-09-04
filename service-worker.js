@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/findhotel-code-challenge/precache-manifest.476f0e84ccccfc821e8def7a342b2d07.js"
+  "/findhotel-code-challenge/precache-manifest.32352d699757e14fd51a26ec1a9bb1cf.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/findhotel-code-challenge/static/css/main.408afe4e.chunk.css",
-    "main.js": "/findhotel-code-challenge/static/js/main.2255f94f.chunk.js",
-    "main.js.map": "/findhotel-code-challenge/static/js/main.2255f94f.chunk.js.map",
+    "main.css": "/findhotel-code-challenge/static/css/main.266d9044.chunk.css",
+    "main.js": "/findhotel-code-challenge/static/js/main.220286bd.chunk.js",
+    "main.js.map": "/findhotel-code-challenge/static/js/main.220286bd.chunk.js.map",
     "runtime~main.js": "/findhotel-code-challenge/static/js/runtime~main.87aa3b7e.js",
     "runtime~main.js.map": "/findhotel-code-challenge/static/js/runtime~main.87aa3b7e.js.map",
-    "static/js/2.7b6ec7b1.chunk.js": "/findhotel-code-challenge/static/js/2.7b6ec7b1.chunk.js",
-    "static/js/2.7b6ec7b1.chunk.js.map": "/findhotel-code-challenge/static/js/2.7b6ec7b1.chunk.js.map",
+    "static/js/2.e4caafb0.chunk.js": "/findhotel-code-challenge/static/js/2.e4caafb0.chunk.js",
+    "static/js/2.e4caafb0.chunk.js.map": "/findhotel-code-challenge/static/js/2.e4caafb0.chunk.js.map",
     "index.html": "/findhotel-code-challenge/index.html",
-    "precache-manifest.476f0e84ccccfc821e8def7a342b2d07.js": "/findhotel-code-challenge/precache-manifest.476f0e84ccccfc821e8def7a342b2d07.js",
+    "precache-manifest.32352d699757e14fd51a26ec1a9bb1cf.js": "/findhotel-code-challenge/precache-manifest.32352d699757e14fd51a26ec1a9bb1cf.js",
     "service-worker.js": "/findhotel-code-challenge/service-worker.js",
-    "static/css/main.408afe4e.chunk.css.map": "/findhotel-code-challenge/static/css/main.408afe4e.chunk.css.map"
+    "static/css/main.266d9044.chunk.css.map": "/findhotel-code-challenge/static/css/main.266d9044.chunk.css.map"
   }
 }
