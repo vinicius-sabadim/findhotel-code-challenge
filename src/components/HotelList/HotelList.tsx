@@ -2,8 +2,8 @@ import React from 'react'
 
 import Hotel from '../Hotel'
 
-import { sortHotels, filterHotels } from './functions'
 import { useAppState } from '../../app-context'
+import { getHotelsUsingCriteria } from '../../functions'
 
 import { Hotel as HotelType } from '../../types'
 
@@ -19,20 +19,20 @@ const HotelList: React.FC = () => {
     filterByStarRating
   } = useAppState()
 
-  const sortedHotels = sortHotels(hotels, sortBy)
-  const filteredHotels = filterHotels(
-    sortedHotels,
+  const hotelMapper = (hotels: HotelType[]): JSX.Element[] => {
+    return hotels.map(hotel => <Hotel key={hotel.id} hotel={hotel} />)
+  }
+
+  const hotelsWithCriteria = getHotelsUsingCriteria(
+    hotels,
+    sortBy,
     filterByDistance,
     filterByGuestRating,
     filterByMaxPrice,
     filterByStarRating
   )
 
-  const hotelMapper = (hotels: HotelType[]): JSX.Element[] => {
-    return hotels.map(hotel => <Hotel key={hotel.id} hotel={hotel} />)
-  }
-
-  if (filteredHotels.length === 0)
+  if (hotelsWithCriteria.length === 0)
     return (
       <div className="hotelList__noResults">
         <p>We're very sorry. :(</p>
@@ -42,7 +42,7 @@ const HotelList: React.FC = () => {
 
   return (
     <ul data-testid="hotel-list" className="hotelList__container">
-      {hotelMapper(filteredHotels)}
+      {hotelMapper(hotelsWithCriteria)}
     </ul>
   )
 }

@@ -6,6 +6,9 @@ import Loading from '../Loading'
 
 import { useAppState } from '../../app-context'
 import { formatLocation } from '../Hotel/functions'
+import { getHotelsUsingCriteria } from '../../functions'
+
+import { Hotel } from '../../types'
 
 import './Main.css'
 
@@ -77,55 +80,111 @@ const MobileArea: React.FC<MobileAreaProps> = ({ showFilters, showSort }) => {
 
 const DesktopArea: React.FC = () => {
   const {
+    hotels,
     filterByDistance,
     filterByGuestRating,
     filterByMaxPrice,
+    filterByStarRating,
+    sortBy,
     updateFilterByDistance,
     updateFilterByGuestRating,
-    updateFilterByMaxPrice
+    updateFilterByMaxPrice,
+    updateSortBy
   } = useAppState()
+
+  const hotelsWithCriteria = getHotelsUsingCriteria(
+    hotels,
+    sortBy,
+    filterByDistance,
+    filterByGuestRating,
+    filterByMaxPrice,
+    filterByStarRating
+  )
+
   return (
-    <div className="main__sliderArea">
-      <div className="main__slider main__slider--price">
-        <p>
-          <i className="fas fa-euro-sign"></i> Max price
-        </p>
-        <span>€{filterByMaxPrice}</span>
-        <Slider
-          min={1}
-          max={1000}
-          tooltip={false}
-          value={filterByMaxPrice}
-          onChange={updateFilterByMaxPrice}
-        />
+    <div className="main__filtersDesktop">
+      <div className="main__sliderArea">
+        <div className="main__slider main__slider--price">
+          <p>
+            <i className="fas fa-euro-sign"></i> Max price
+          </p>
+          <span>€{filterByMaxPrice}</span>
+          <Slider
+            min={1}
+            max={1000}
+            tooltip={false}
+            value={filterByMaxPrice}
+            onChange={updateFilterByMaxPrice}
+          />
+        </div>
+        <div className="main__slider main__slider--guest">
+          <p>
+            <i className="far fa-smile"></i> Min rating
+          </p>
+          <span>{filterByGuestRating}</span>
+          <Slider
+            min={0}
+            max={10}
+            tooltip={false}
+            value={filterByGuestRating}
+            onChange={updateFilterByGuestRating}
+          />
+        </div>
+        <div className="main__slider main__slider--location">
+          <p>
+            <i className="fas fa-location-arrow"></i> Distance from city center
+          </p>
+          <span>{formatLocation(filterByDistance)}</span>
+          <Slider
+            min={20}
+            max={50000}
+            step={100}
+            tooltip={false}
+            value={filterByDistance}
+            onChange={updateFilterByDistance}
+          />
+        </div>
       </div>
-      <div className="main__slider main__slider--guest">
-        <p>
-          <i className="far fa-smile"></i> Min rating
-        </p>
-        <span>{filterByGuestRating}</span>
-        <Slider
-          min={0}
-          max={10}
-          tooltip={false}
-          value={filterByGuestRating}
-          onChange={updateFilterByGuestRating}
-        />
-      </div>
-      <div className="main__slider main__slider--location">
-        <p>
-          <i className="fas fa-location-arrow"></i> Distance from city center
-        </p>
-        <span>{formatLocation(filterByDistance)}</span>
-        <Slider
-          min={20}
-          max={50000}
-          step={100}
-          tooltip={false}
-          value={filterByDistance}
-          onChange={updateFilterByDistance}
-        />
-      </div>
+
+      {hotelsWithCriteria.length > 0 && (
+        <div className="main__sortArea">
+          <label htmlFor="sort">Sort by</label>
+          <select
+            id="sort"
+            value={sortBy}
+            onChange={e => updateSortBy(e.target.value)}
+          >
+            <option value="best">Best match</option>
+            <option value="lowest">Lowest price</option>
+          </select>
+          <HotelsInfo hotelsWithCriteria={hotelsWithCriteria} />
+        </div>
+      )}
+    </div>
+  )
+}
+
+interface HotelsInfoProps {
+  hotelsWithCriteria: Hotel[]
+}
+
+const HotelsInfo: React.FC<HotelsInfoProps> = ({ hotelsWithCriteria }) => {
+  const hotelsAmount = hotelsWithCriteria.length
+  const hotelsWithGreatDeals = hotelsWithCriteria.filter(
+    hotel => hotel.hasGreatDeal
+  ).length
+
+  return (
+    <div className="main__hotelInfo">
+      {hotelsAmount} {hotelsAmount === 1 ? 'hotel' : 'hotels'}
+      {hotelsWithGreatDeals > 0 && (
+        <span>
+          ,{' '}
+          <span className="main__hotelInfoDeals">
+            {hotelsWithGreatDeals} with great deals
+          </span>
+        </span>
+      )}
     </div>
   )
 }

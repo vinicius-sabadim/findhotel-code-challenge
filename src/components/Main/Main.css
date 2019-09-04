@@ -32,16 +32,20 @@
   padding: 6px 22px;
 }
 
-.main__sliderArea {
+.main__filtersDesktop {
   display: none;
 }
 
 @media screen and (min-width: 1023px) {
-  .main__sliderArea {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px;
+  .main__filtersDesktop {
+    display: block;
   }
+}
+
+.main__sliderArea {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
 }
 
 .main__slider {
@@ -74,6 +78,10 @@
   width: 20px;
 }
 
+.main__slider .rangeslider__handle:focus {
+  outline: none;
+}
+
 .main__slider .rangeslider__handle::after {
   background-color: transparent;
   box-shadow: none;
@@ -82,4 +90,25 @@
 .main__slider .rangeslider__fill {
   background-color: #2d8beb;
   box-shadow: none;
+}
+
+.main__sortArea {
+  align-items: center;
+  color: #555;
+  display: flex;
+  font-size: 14px;
+  padding: 8px;
+}
+
+.main__sortArea select {
+  background-color: white;
+  border-radius: 4px;
+  border: none;
+  margin: 0 8px;
+  padding: 8px 16px 8px 8px;
+}
+
+.main__hotelInfoDeals {
+  color: #2d8beb;
+  text-decoration: underline;
 }
