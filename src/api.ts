@@ -1,7 +1,11 @@
 import { Hotel } from './types'
 import { buildHotel } from './functions'
 
-const hotels = [...Array(25)].map(buildHotel)
+const HOW_MANY_HOTELS = 25
+
+const hotels = Array(HOW_MANY_HOTELS)
+  .fill(null)
+  .map(buildHotel)
 
 const getHotels = (): Promise<Hotel[]> => {
   // Simulating the delay of an api call

@@ -5,8 +5,6 @@ import Hotel from '../Hotel'
 import { useAppState } from '../../app-context'
 import { getHotelsUsingCriteria } from '../../functions'
 
-import { Hotel as HotelType } from '../../types'
-
 import './HotelList.css'
 
 const HotelList: React.FC = () => {
@@ -18,10 +16,6 @@ const HotelList: React.FC = () => {
     filterByMaxPrice,
     filterByStarRating
   } = useAppState()
-
-  const hotelMapper = (hotels: HotelType[]): JSX.Element[] => {
-    return hotels.map(hotel => <Hotel key={hotel.id} hotel={hotel} />)
-  }
 
   const hotelsWithCriteria = getHotelsUsingCriteria(
     hotels,
@@ -42,7 +36,9 @@ const HotelList: React.FC = () => {
 
   return (
     <ul data-testid="hotel-list" className="hotelList__container">
-      {hotelMapper(hotelsWithCriteria)}
+      {hotelsWithCriteria.map(hotel => (
+        <Hotel key={hotel.id} hotel={hotel} />
+      ))}
     </ul>
   )
 }

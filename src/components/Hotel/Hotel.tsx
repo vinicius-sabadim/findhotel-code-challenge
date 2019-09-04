@@ -22,25 +22,6 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
 
   const bestDeal = hotel.deals[0]
 
-  const starMapper = (stars: number[], value: number): JSX.Element[] => {
-    return stars.map((_, index) => (
-      <div
-        key={`star-${index}`}
-        className={index + 1 <= value ? 'hotel__star--active' : 'hotel__star'}
-      >
-        ★
-      </div>
-    ))
-  }
-
-  const tagMapper = (tags: string[]): JSX.Element[] => {
-    return tags.map(tag => <Tag key={tag} tag={tag} />)
-  }
-
-  const dealsMapper = (deals: DealType[]): JSX.Element[] => {
-    return deals.map(deal => <Deal key={deal.partner} deal={deal} />)
-  }
-
   const handleBookmark = () => {
     changeBookmark(hotel.id, !hotel.isBookmarked)
   }
@@ -63,7 +44,7 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
       <div className="hotel__info">
         <h1>{hotel.title}</h1>
         <div className="hotel__stars">
-          {starMapper([...Array(5)], hotel.starRating)}
+          <Stars rating={hotel.starRating} />
         </div>
         <div className="hotel__location">
           <i className="fas fa-location-arrow"></i>
@@ -79,48 +60,82 @@ const Hotel: React.FC<HotelProps> = ({ hotel }) => {
           {getGuestRatingText(parseFloat(hotel.guestRating))}{' '}
           {hotel.guestRating}
         </div>
-        <div className="hotel__tags">{tagMapper(hotel.tags)}</div>
+        <Tags tags={hotel.tags} />
       </div>
       <div className="hotel__dealsContainer">
         <BestDeal deal={bestDeal} />
-        {dealsMapper(hotel.deals.slice(1))}
+        <Deals deals={hotel.deals.slice(1)} />
       </div>
     </li>
   )
 }
 
-interface TagProps {
-  tag: string
+interface TagsProps {
+  tags: string[]
 }
 
-const Tag: React.FC<TagProps> = ({ tag }) => {
-  return <div className="hotel__tag">{tag}</div>
-}
-
-interface DealProps {
-  deal: DealType
-}
-
-const Deal: React.FC<DealProps> = ({ deal }) => {
+const Tags: React.FC<TagsProps> = ({ tags }) => {
   return (
-    <div className="hotel__deal">
-      {deal.partner}
-      <div className="hotel__dealPriceContainer">
-        {deal.discount ? (
-          <>
-            <span className="hotel__dealPrice">€{deal.price}</span>
-            <span className="hotel__dealFinalPrice">
-              €{deal.price - deal.discount}
-            </span>
-          </>
-        ) : (
-          <span className="hotel__dealFinalPrice">€{deal.price}</span>
-        )}
-      </div>
-      <a href={deal.url}>
-        View Deal<span>˃</span>
-      </a>
+    <div className="hotel__tags">
+      {tags.map(tag => (
+        <div key={tag} className="hotel__tag">
+          {tag}
+        </div>
+      ))}
     </div>
+  )
+}
+
+interface StarsProps {
+  rating: number
+}
+
+const Stars: React.FC<StarsProps> = ({ rating }) => {
+  const stars = Array(5).fill(null)
+  return (
+    <>
+      {stars.map((_, index) => (
+        <div
+          key={`star-${index}`}
+          className={
+            index + 1 <= rating ? 'hotel__star--active' : 'hotel__star'
+          }
+        >
+          ★
+        </div>
+      ))}
+    </>
+  )
+}
+
+interface DealsProps {
+  deals: DealType[]
+}
+
+const Deals: React.FC<DealsProps> = ({ deals }) => {
+  return (
+    <>
+      {deals.map(deal => (
+        <div key={deal.partner} className="hotel__deal">
+          {deal.partner}
+          <div className="hotel__dealPriceContainer">
+            {deal.discount ? (
+              <>
+                <span className="hotel__dealPrice">€{deal.price}</span>
+                <span className="hotel__dealFinalPrice">
+                  €{deal.price - deal.discount}
+                </span>
+              </>
+            ) : (
+              <span className="hotel__dealFinalPrice">€{deal.price}</span>
+            )}
+          </div>
+          <a href={deal.url}>
+            View Deal<span>˃</span>
+          </a>
+        </div>
+      ))}
+    </>
   )
 }
 
